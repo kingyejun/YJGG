@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YJGG - 리그 오브 레전드 챔피언 · 스킨 · 메타</title>
+<meta name="description" content="YJGG: 리그 오브 레전드 챔피언 카운터, 메타 분석, 스킨 랭킹과 리뷰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <h1 class="logo">YJGG</h1>
+  <p class="tagline">리그 오브 레전드의 모든 것 · 챔피언 카운터 · 메타 분석 · 스킨 랭킹</p>
+  <p class="patch" id="patch">패치 정보를 불러오는 중…</p>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab active" data-tab="champs" role="tab">챔피언</button>
+  <button class="tab" data-tab="lanes" role="tab">라인별 카운터</button>
+  <button class="tab" data-tab="meta" role="tab">메타 분석</button>
+  <button class="tab" data-tab="skins" role="tab">내 스킨 랭킹</button>
+</nav>
+
+<main>
+  <section id="view-champs" class="view active">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="챔피언 이름 검색 (예: 아리, Ahri)" aria-label="챔피언 검색">
+      <div class="chips" id="roleChips"></div>
+    </div>
+    <div class="grid" id="champGrid"></div>
+  </section>
+
+  <section id="view-lanes" class="view">
+    <div class="chips" id="laneChips"></div>
+    <div id="laneList"></div>
+  </section>
+
+  <section id="view-meta" class="view">
+    <div id="metaLinks" class="linkrow"></div>
+    <div id="metaTable"></div>
+  </section>
+
+  <section id="view-skins" class="view">
+    <div id="myRanking"></div>
+  </section>
+</main>
+
+<div class="overlay" id="champModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="close" data-close aria-label="닫기">×</button>
+    <div id="champBody"></div>
+  </div>
+</div>
+
+<div class="overlay top" id="skinModal" hidden>
+  <div class="modal wide" role="dialog" aria-modal="true">
+    <button class="close" data-close aria-label="닫기">×</button>
+    <div id="skinBody"></div>
+  </div>
+</div>
+
+<footer>
+  <p>YJGG isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
